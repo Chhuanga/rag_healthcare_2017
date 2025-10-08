@@ -158,3 +158,4 @@ If you encounter issues:
 
 ---
 
+**Built with ❤️ for healthcare data analysis and AI-powered information retrieval**
