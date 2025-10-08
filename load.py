@@ -3,9 +3,17 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer
 import chromadb
 import google.generativeai as genai
+from dotenv import load_dotenv
 
-# Configure Gemini API
-genai.configure(api_key="AIzaSyBDYRC0nLhQOKmYXrzJa-QgW-LYEgZjCyw")
+# Load environment variables from .env file
+load_dotenv()
+
+# Configure Gemini API with environment variable
+api_key = os.getenv('GEMINI_API_KEY')
+if not api_key:
+    raise ValueError("GEMINI_API_KEY not found in environment variables. Please check your .env file.")
+
+genai.configure(api_key=api_key)
 
 # Load data and create collection
 def load_data_and_create_collection():

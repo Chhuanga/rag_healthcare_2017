@@ -65,18 +65,24 @@ The system expects CSV files in the `data/` folder with healthcare information i
 
 3. **Install dependencies**
    ```bash
-   pip install streamlit pandas sentence-transformers chromadb google-generativeai
+   pip install -r requirements.txt
    ```
 
-4. **Set up data**
+4. **Set up environment variables**
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
+   
+   # Edit .env and add your API key
+   nano .env  # or use your preferred editor
+   ```
+   - Get a Google Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Replace `your_gemini_api_key_here` with your actual API key in the `.env` file
+
+5. **Set up data**
    - Download the Kaggle dataset (see Data Source section above)
    - Create a `data/` folder in the project root
    - Place all CSV files in the `data/` folder
-
-5. **Configure API Key**
-   - Get a Google Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Replace the API key in both `frontend.py` and `load.py`
-   - **Security Note**: For production, use environment variables instead of hardcoding API keys
 
 ## Usage
 

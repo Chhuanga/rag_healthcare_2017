@@ -1,7 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyBDYRC0nLhQOKmYXrzJa-QgW-LYEgZjCyw")
 
 from load import rag_chatbot_gemini
 from load import collection
@@ -19,4 +18,3 @@ if st.button("Get Answer"):
         st.write(answer)
     else:
         st.warning("Please enter a valid question")
-        
